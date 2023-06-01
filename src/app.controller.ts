@@ -35,7 +35,6 @@ export class AppController {
 
   @Get('/api/copyRules')
   async copyRulesController(@Req() request, @Query() query) {
-    console.trace()
     console.debug(`controller received /api/copyRules`)
 
     const { fromDomain, fromCluster, toDomain, toCluster, downloads, merge } = query;
@@ -44,8 +43,6 @@ export class AppController {
       fromCluster,
       toDomain,
       toCluster,
-      downloads === 'true',
-      merge === 'true',
     );
   }
 }

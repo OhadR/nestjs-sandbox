@@ -1,5 +1,11 @@
 import { Injectable } from '@nestjs/common';
+import Logger from './logger'
+const logger = Logger.getLogger('app-service')
 
+function sleep(secs) {
+  console.debug(`sleeping for ${secs} secs... `)
+  return new Promise(resolve => setTimeout(resolve, secs * 1000));
+}
 
 @Injectable()
 export class AppService {
@@ -12,14 +18,12 @@ export class AppService {
       fromCluster: string,
       toDomain: string,
       toCluster: string,
-      downloads: boolean,
-      merge: boolean,
   ) {
-    console.info(`copyRules, from: ${fromDomain}/${fromCluster}, to: ${toDomain}/${toCluster}`);
-    let path = downloads ? '' : 'configurations/';
+    logger.info(`copyRules, from: ${fromDomain}/${fromCluster}, to: ${toDomain}/${toCluster}`);
 
+    //do something heavy:
+    await sleep(45);
 
-    console.trace('copying...');
-    console.debug('done copying.');
+    logger.debug('done.');
   };
 }
