@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {    
+    "module": "commonjs",
+    "target": "ES2022",
+		"types": ["mocha", "node"],
+    "allowJs": true,    
+    "sourceMap": true,
+    "declaration": true,
+    "esModuleInterop": true,
+    "incremental": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "resolveJsonModule": true,
+		"outDir": "dist"
+  },
+  "include": [
+    "./src/**/*",
+    "*.pem",
+    "*.key",
+    "*.pwd",
+    "./tests/**/*"
+, "local/tests/client/client.test.ts"  ]
+}
